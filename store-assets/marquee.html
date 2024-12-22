@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tab Cleanup Marquee Promo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #00A6FF;
+            height: 560px;
+            width: 1400px;
+            display: flex;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            gap: 60px;
+            padding: 0 40px;
+        }
+        .text-content {
+            flex: 1;
+        }
+        .title {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 32px;
+            opacity: 0.9;
+        }
+        .features li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .features li::before {
+            content: "•";
+            font-size: 40px;
+            line-height: 1;
+        }
+        .background-tabs {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(255,255,255,0.1) 0px,
+                    rgba(255,255,255,0.1) 4px,
+                    transparent 4px,
+                    transparent 24px
+                );
+            animation: slide 20s linear infinite;
+        }
+        @keyframes slide {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .icon {
+            width: 256px;
+            height: 256px;
+            flex-shrink: 0;
+        }
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .browser-preview {
+            position: relative;
+            flex-shrink: 0;
+            width: 600px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .browser-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .tab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .tab.inactive {
+            opacity: 0.6;
+        }
+        .favicon {
+            width: 16px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-tabs"></div>
+    <div class="content">
+        <div class="text-content">
+            <div class="title">Tab Cleanup</div>
+            <ul class="features">
+                <li>Automatically manage inactive tabs</li>
+                <li>Flexible time ranges</li>
+                <li>Keep browser organized</li>
+            </ul>
+        </div>
+        <div class="browser-preview">
+            <div class="browser-tabs">
+                <div class="tab">
+                    <div class="favicon"></div>
+                    <span>Active Tab</span>
+                </div>
+                <div class="tab inactive">
+                    <div class="favicon"></div>
+                    <span>Inactive (2 hours ago)</span>
+                </div>
+                <div class="tab inactive">
+                    <div class="favicon"></div>
+                    <span>Inactive (1 day ago)</span>
+                </div>
+                <div class="tab inactive">
+                    <div class="favicon"></div>
+                    <span>Inactive (3 days ago)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

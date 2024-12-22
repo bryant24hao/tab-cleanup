@@ -1,0 +1,105 @@
+"description": "Automatically manage and close inactive browser tabs based on customizable time ranges. Keep your browsing clean and efficient."<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tab Cleanup Promotional Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #00A6FF;
+            height: 280px;
+            width: 440px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            gap: 24px;
+            padding: 0 20px;
+        }
+        .text-content {
+            flex: 1;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .features li::before {
+            content: "•";
+            font-size: 20px;
+            line-height: 1;
+        }
+        .background-tabs {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(255,255,255,0.1) 0px,
+                    rgba(255,255,255,0.1) 2px,
+                    transparent 2px,
+                    transparent 12px
+                );
+            animation: slide 20s linear infinite;
+        }
+        @keyframes slide {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .icon {
+            width: 96px;
+            height: 96px;
+            flex-shrink: 0;
+        }
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-tabs"></div>
+    <div class="content">
+        <div class="icon">
+            <img src="../dist/icons/icon128.png" alt="Tab Cleanup Icon">
+        </div>
+        <div class="text-content">
+            <div class="title">Maintain a clean and efficient browsing experience</div>
+            <ul class="features">
+                <li>Automatically manage inactive tabs</li>
+                <li>Flexible Time Ranges</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
