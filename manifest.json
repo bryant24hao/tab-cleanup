@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Tab Cleanup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clean up inactive tabs automatically. Set custom time ranges to keep your browser organized and efficient.",
   "icons": {
     "16": "icons/icon16.png",
@@ -12,7 +12,6 @@
   "permissions": [
     "tabs",
     "storage",
-    "scripting",
     "activeTab"
   ],
   "action": {
