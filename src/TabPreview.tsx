@@ -19,8 +19,17 @@ const TabPreview: React.FC<TabPreviewProps> = ({ tabs: initialTabs, onClose, onC
     })));
   }, [tabs]);
 
-  const handleRemoveTab = (tabId: number) => {
-    setTabs(prev => prev.filter(tab => tab.id !== tabId));
+  const handleRemoveTab = async (tabId: number) => {
+    try {
+      // 立即关闭标签页
+      await chrome.tabs.remove(tabId);
+      console.log(`Tab ${tabId} closed successfully`);
+      
+      // 更新预览列表
+      setTabs(prev => prev.filter(tab => tab.id !== tabId));
+    } catch (error) {
+      console.error(`Error closing tab ${tabId}:`, error);
+    }
   };
 
   const handleConfirm = () => {

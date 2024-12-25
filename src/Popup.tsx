@@ -213,7 +213,15 @@ const Popup: React.FC = () => {
         .filter((id): id is number => id !== undefined);
 
       if (tabIds.length > 0) {
-        await chrome.tabs.remove(tabIds);
+        // 尝试关闭每个标签页，忽略已经关闭的标签页的错误
+        await Promise.all(tabIds.map(async (tabId) => {
+          try {
+            await chrome.tabs.remove(tabId);
+          } catch (error) {
+            // 忽略已经关闭的标签页的错误
+            console.log(`Tab ${tabId} might already be closed:`, error);
+          }
+        }));
         await updateTabCounts();
       }
     } catch (error) {
